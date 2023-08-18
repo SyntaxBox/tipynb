@@ -6,7 +6,7 @@ function Logo({ height }: { height: number }) {
   return (
     <div className="flex items-center justify-between">
       <img style={style} src="./logo.svg" alt="logo image" />
-      <p className="text-3xl font-bold text-pink-500">TIPYNB</p>
+      <p className="text-3xl font-bold text-pink-500 ml-2">TIPYNB</p>
     </div>
   );
 }
