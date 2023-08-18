@@ -16,8 +16,8 @@ function DarkModeButton() {
   return (
     <div data-testid="dark-mode-button">
       <DarkModeSwitch
-        moonColor="#ec4899"
-        sunColor="#ec4899"
+        moonColor="#14b8a6"
+        sunColor="#14b8a6"
         checked={isDarkMode}
         onChange={toggleDarkMode}
         size={iconsSize}
