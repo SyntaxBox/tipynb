@@ -1,0 +1,7 @@
+{
+  "restartable": "rs",
+  "ignore": ["node_modules/**/node_modules"],
+  "watch": ["src"],
+  "ext": "ts",
+  "exec": "npm run start"
+}
