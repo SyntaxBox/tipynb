@@ -1,8 +1,9 @@
 import { IconCloudUpload } from "@tabler/icons-react";
 import { ICON_STROKE, ICON_SIZE } from "../../shared";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Checkbox from "../Checkbox/Checkbox";
 import { TextButton } from "../../ui";
+import { getTransformedFile } from "../../shared";
 
 function Upload() {
   const [wrongFile, setWrongFile] = useState(false);
@@ -28,6 +29,19 @@ function Upload() {
     }
   };
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (uploadFile) {
+      const res = await getTransformedFile(uploadFile, {
+        pdf: selectPdf,
+        py: selectPy,
+        docx: selectDocx,
+      });
+      console.log(res);
+    }
+  };
+
   useEffect(() => {
     if (uploadFile && (selectPdf || selectPy || selectDocx)) {
       console.log(uploadFile && (selectPdf || selectPy || selectDocx));
@@ -36,7 +50,10 @@ function Upload() {
   }, [selectDocx, selectPdf, selectPy, uploadFile]);
 
   return (
-    <form className="w-full flex flex-col items-start justify-center gap-6">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full flex flex-col items-start justify-center gap-6"
+    >
       <label
         htmlFor="dropzone-file"
         className="flex flex-col items-center justify-center w-full border-2 border-slate-300 border-dashed rounded-lg cursor-pointer bg-slate-50 dark:hover:bg-bray-800 dark:bg-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:hover:border-slate-500 dark:hover:bg-slate-600"
