@@ -1,6 +1,6 @@
 import { IconBrandGithub } from "@tabler/icons-react";
 import { IconButton, Container } from "../../ui";
-import { iconStroke, iconsSize } from "../../shared";
+import { ICON_STROKE, ICON_SIZE } from "../../shared";
 import Logo from "../Logo/Logo";
 import DarkModeButton from "../DarkMode/DarkMode";
 
@@ -15,7 +15,7 @@ function Nav() {
           data-testid="github-repo"
         >
           <IconButton title="Github repo">
-            <IconBrandGithub size={iconsSize} stroke={iconStroke} />
+            <IconBrandGithub size={ICON_SIZE} stroke={ICON_STROKE} />
           </IconButton>
         </a>
         <div data-testid="toggle-dark-mode">

@@ -1,5 +1,5 @@
 import { IconCloudUpload } from "@tabler/icons-react";
-import { iconStroke, iconsSize } from "../../shared";
+import { ICON_STROKE, ICON_SIZE } from "../../shared";
 import { ChangeEvent, useEffect, useState } from "react";
 import Checkbox from "../Checkbox/Checkbox";
 import { TextButton } from "../../ui";
@@ -44,8 +44,8 @@ function Upload() {
         <div className="flex flex-col items-center justify-center pt-5 pb-6">
           <IconCloudUpload
             className="text-slate-500 dark:text-slate-400"
-            size={iconsSize + 30}
-            stroke={iconStroke - 0.6}
+            size={ICON_SIZE + 30}
+            stroke={ICON_STROKE - 0.6}
           />
           <p className="mb-2 text-sm text-slate-500 dark:text-slate-400">
             <span className="font-semibold">Click to upload</span> or drag and

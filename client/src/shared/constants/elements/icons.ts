@@ -1,2 +1,2 @@
-export const iconsSize = 22;
-export const iconStroke = 2;
+export const ICON_SIZE = 22;
+export const ICON_STROKE = 2;
