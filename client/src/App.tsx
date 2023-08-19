@@ -12,7 +12,7 @@ function App() {
           <i className="bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200 font-normal rounded-lg py-1 px-2">
             .ipynb
           </i>{" "}
-          files intro Python and PDF files
+          files into Python and PDF / Doc files
         </H1>
         <Upload />
       </Container>
