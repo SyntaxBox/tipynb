@@ -48,7 +48,7 @@ function Upload() {
       setEnableSubmit(true);
     }
   }, [selectDocx, selectPdf, selectPy, uploadFile]);
-
+  console.log([selectPdf, selectPy, selectDocx]);
   return (
     <form
       onSubmit={handleSubmit}
