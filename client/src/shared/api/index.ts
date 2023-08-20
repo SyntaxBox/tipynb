@@ -9,6 +9,7 @@ export async function getTransformedFile(
   }
 ) {
   const { pdf, py, docx } = options;
+
   if (!pdf && !py && !docx)
     throw new Error("Please provide at least one file type");
 
