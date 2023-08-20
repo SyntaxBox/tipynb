@@ -13,14 +13,22 @@ function Checkbox({
   text?: string;
 }) {
   const [check, setCheck] = useState(checked || false);
-  const handleClick = () => {
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
       setCheck(!check);
-      onChange && onChange(check);
+      onChange && onChange(e.target.checked);
     }
   };
   return (
-    <div className="flex items-center justify-center w-fit gap-2">
+    <label className="flex items-center justify-center w-fit gap-2">
+      <input
+        type="checkbox"
+        disabled={disabled}
+        hidden
+        checked={check}
+        onChange={handleChange}
+      />
       <span
         className={`flex items-center justify-center w-6 h-6 rounded-md border-2 duration-0 ${
           disabled
@@ -31,24 +39,23 @@ function Checkbox({
             ? "border-pink-500 bg-pink-500"
             : "border-slate-200 dark:border-slate-700"
         }`}
-        onClick={handleClick}
       >
         {!disabled && check && <IconCheck size={24} className="text-white" />}
       </span>
       {text && (
         <p
           className={`
-          ${disabled && "text-slate-400 dark:text-slate-500"}
-          ${
-            check && !disabled
-              ? "dark:text-teal-500 text-teal-500"
-              : "text-slate-500 dark:text-slate-400 "
-          } text-md`}
+        ${disabled && "text-slate-400 dark:text-slate-500"}
+        ${
+          check && !disabled
+            ? "dark:text-teal-500 text-teal-500"
+            : "text-slate-500 dark:text-slate-400 "
+        } text-md`}
         >
           {text}
         </p>
       )}
-    </div>
+    </label>
   );
 }
 
