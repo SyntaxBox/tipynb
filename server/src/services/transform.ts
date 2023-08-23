@@ -1,5 +1,3 @@
-import * as nbformat from '@jupyterlab/nbformat';
-
 export function transformIPYNB(
   buffer: Express.Multer.File,
   options: {
